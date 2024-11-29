@@ -1,38 +1,181 @@
+/* App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 .App {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 30px 20px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  color: #333;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.search-form {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.search-form input {
+  padding: 15px;
+  font-size: 1.2rem;
+  border: 2px solid #007bff;
+  border-radius: 30px;
+  width: 80%;
+  margin-right: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-form input:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.2);
+}
+
+.search-form button {
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 30px;
+  transition: background-color 0.3s ease-in-out;
+  width: 30%;
+}
+
+.search-form button:hover {
+  background-color: #0056b3;
+}
+
+.weather-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 20px;
+}
+
+.weather-card h2 {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.weather-card h3 {
+  font-size: 2.5rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+.weather-card p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.weather-details p {
+  font-size: 1rem;
+  color: #444;
+}
+
+.weather-card .description {
+  font-size: 1.3rem;
+  color: #444;
+  text-transform: capitalize;
+  margin: 10px 0;
+}
+
+.weather-card .details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.weather-card .details p {
+  flex: 1;
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.weather-card .details p strong {
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Background Images Based on Weather Condition */
+.sunny {
+  background-image: url('https://cdn.vectorstock.com/i/1000v/01/18/sun-in-clouds-3d-sunny-weather-elements-white-vector-45910118.jpg'); /* Replace with actual URL */
+  background-size: cover;
+  background-position: center;
+}
+
+.rainy {
+  background-image: url('https://img.freepik.com/premium-photo/3d-cloudy-sun-rain-icon-know-weather-application-web_494516-2102.jpg'); /* Replace with actual URL */
+  background-size: cover;
+  background-position: center;
+}
+
+.cloudy {
+  background-image: url('https://thumbs.dreamstime.com/b/vector-cartoon-d-cloudy-weather-icon-soft-blue-grey-fluffy-clouds-white-background-render-bubble-shape-round-geometric-cute-336838085.jpg'); /* Replace with actual URL */
+  background-size: cover;
+  background-position: center;
+}
+
+.weather-card {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 768px) {
+  .search-form input {
+    width: 70%;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .search-form button {
+    width: 25%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .weather-card {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .weather-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .weather-card h3 {
+    font-size: 2.2rem;
   }
 }
