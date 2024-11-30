@@ -12,7 +12,7 @@ const Search = ({ onSearch }) => {
     <form onSubmit={handleSubmit} className="search-form">
       <input
         type="text"
-        placeholder="Enter city"
+        placeholder="Enter City Name"
         value={city}
         onChange={(e) => setCity(e.target.value)}
       />
