@@ -1,126 +1,137 @@
-/* App.css */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body styling */
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f0f0f0;
+  font-family: 'Poppins', sans-serif; /* Modern sans-serif font */
+  background-color: #f5f5f5;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   flex-direction: column;
+  background: linear-gradient(45deg, #f0f4f7, #e2e8f0); /* Soft gradient background */
 }
 
+/* Main App container */
 .App {
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 10px;
-  padding: 30px 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 40px 30px;
   width: 90%;
-  max-width: 500px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 480px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 2;
+  animation: fadeIn 0.8s ease-out; /* Subtle fade-in effect */
 }
 
+/* Heading */
 h1 {
-  color: #333;
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-  font-weight: 700;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
 }
 
+/* Search form */
 .search-form {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .search-form input {
-  padding: 15px;
+  padding: 18px;
   font-size: 1.2rem;
-  border: 2px solid #007bff;
+  border: 2px solid #3498db;
   border-radius: 30px;
   width: 80%;
-  margin-right: 10px;
+  margin-right: 12px;
   transition: all 0.3s ease-in-out;
+  background-color: #f8fafc;
+  color: #333;
 }
 
 .search-form input:focus {
   outline: none;
-  border-color: #0056b3;
-  box-shadow: 0 0 10px rgba(0, 0, 255, 0.2);
+  border-color: #2980b9;
+  box-shadow: 0 0 15px rgba(41, 128, 185, 0.2);
 }
 
 .search-form button {
-  padding: 15px 20px;
+  padding: 18px 24px;
   font-size: 1.2rem;
   cursor: pointer;
   border: none;
-  background-color: #007bff;
+  background-color: #3498db;
   color: white;
   border-radius: 30px;
-  transition: background-color 0.3s ease-in-out;
-  width: 30%;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  width: 25%;
 }
 
 .search-form button:hover {
-  background-color: #0056b3;
+  background-color: #2980b9;
+  transform: scale(1.05);
 }
 
+/* Weather card */
 .weather-card {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.85);
   border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
   text-align: center;
   margin-top: 20px;
+  animation: slideUp 0.5s ease-out; /* Slide up animation */
 }
 
 .weather-card h2 {
-  font-size: 2rem;
-  color: #333;
+  font-size: 2.1rem;
+  color: #34495e;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 .weather-card h3 {
-  font-size: 2.5rem;
-  color: #333;
-  margin: 10px 0;
+  font-size: 3.2rem;
+  color: #3498db;
+  margin: 15px 0;
+  font-weight: 700;
 }
 
 .weather-card p {
   font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 10px;
-}
-
-.weather-details p {
-  font-size: 1rem;
-  color: #444;
+  color: #7f8c8d;
+  margin-bottom: 12px;
 }
 
 .weather-card .description {
-  font-size: 1.3rem;
-  color: #444;
+  font-size: 1.4rem;
+  color: #2c3e50;
   text-transform: capitalize;
-  margin: 10px 0;
+  margin: 12px 0;
 }
 
 .weather-card .details {
   display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
+  justify-content: space-around;
+  margin-top: 20px;
 }
 
 .weather-card .details p {
   flex: 1;
   font-size: 1rem;
-  color: #555;
+  color: #7f8c8d;
   margin: 0;
   text-align: center;
 }
@@ -129,21 +140,21 @@ h1 {
   font-weight: bold;
 }
 
-/* Background Images Based on Weather Condition */
+/* Weather condition background styles */
 .sunny {
-  background-image: url('https://cdn.vectorstock.com/i/1000v/01/18/sun-in-clouds-3d-sunny-weather-elements-white-vector-45910118.jpg'); /* Replace with actual URL */
+  background-image: url('https://cdn.pixabay.com/photo/2017/06/13/22/44/sun-2402506_960_720.jpg'); /* Updated sunny image */
   background-size: cover;
   background-position: center;
 }
 
 .rainy {
-  background-image: url('https://img.freepik.com/premium-photo/3d-cloudy-sun-rain-icon-know-weather-application-web_494516-2102.jpg'); /* Replace with actual URL */
+  background-image: url('https://cdn.pixabay.com/photo/2017/06/13/22/44/rain-2401532_960_720.jpg'); /* Updated rainy image */
   background-size: cover;
   background-position: center;
 }
 
 .cloudy {
-  background-image: url('https://thumbs.dreamstime.com/b/vector-cartoon-d-cloudy-weather-icon-soft-blue-grey-fluffy-clouds-white-background-render-bubble-shape-round-geometric-cute-336838085.jpg'); /* Replace with actual URL */
+  background-image: url('https://cdn.pixabay.com/photo/2015/09/14/16/05/clouds-942996_960_720.jpg'); /* Updated cloudy image */
   background-size: cover;
   background-position: center;
 }
@@ -154,6 +165,7 @@ h1 {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
+/* Responsive design */
 @media (max-width: 768px) {
   .search-form input {
     width: 70%;
@@ -164,11 +176,11 @@ h1 {
   }
 
   .weather-card {
-    padding: 15px;
+    padding: 18px;
   }
 
   h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .weather-card h2 {
@@ -176,6 +188,65 @@ h1 {
   }
 
   .weather-card h3 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Search form button */
+.search-form button {
+  padding: 16px 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  background-color: #3498db; /* Vibrant blue */
+  color: white;
+  border-radius: 50px; /* Rounded corners for a sleek look */
+  transition: all 0.3s ease;
+  width: auto;
+  min-width: 120px; /* Minimum width to keep the button consistent */
+  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.4);
+}
+
+/* Button hover state */
+.search-form button:hover {
+  background-color: #2980b9; /* Darker blue for hover */
+  transform: translateY(-3px); /* Button lifts up slightly */
+  box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4); /* Enhanced shadow on hover */
+}
+
+/* Button active state */
+.search-form button:active {
+  transform: translateY(2px); /* Button slightly pressed when clicked */
+  box-shadow: 0 2px 5px rgba(52, 152, 219, 0.2); /* Subtle shadow effect on click */
+}
+
+/* Button focus state (for accessibility) */
+.search-form button:focus {
+  outline: none;
+  border: 2px solid #2980b9; /* Blue border on focus */
+  box-shadow: 0 0 10px rgba(41, 128, 185, 0.3); /* Subtle focus glow */
 }
