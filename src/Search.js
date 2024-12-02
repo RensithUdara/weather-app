@@ -16,7 +16,7 @@ const Search = ({ onSearch }) => {
         value={city}
         onChange={(e) => setCity(e.target.value)}
       />
-      <button type="submit now">Search</button>
+      <button type="submit">Search</button>
     </form>
   );
 };
